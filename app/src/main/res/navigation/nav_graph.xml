@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home_frag">
+
+    <fragment
+        android:id="@+id/home_frag"
+        android:name="com.learn.navigation.home_frag"
+        android:label="fragment_home_frag"
+        tools:layout="@layout/fragment_home_frag" >
+        <action
+            android:id="@+id/action_home_frag_to_signup_frag"
+            app:destination="@id/signup_frag" />
+        <action
+            android:id="@+id/action_home_frag_to_detail_frag"
+            app:destination="@id/detail_frag" />
+        <argument
+            android:name="auth"
+            app:argType="com.learn.navigation.models.Auth" />
+    </fragment>
+    <fragment
+        android:id="@+id/signup_frag"
+        android:name="com.learn.navigation.signup_frag"
+        android:label="fragment_signup_frag"
+        tools:layout="@layout/fragment_signup_frag" />
+    <fragment
+        android:id="@+id/detail_frag"
+        android:name="com.learn.navigation.Detail_frag"
+        android:label="fragment_detail_frag"
+        tools:layout="@layout/fragment_detail_frag" >
+        <argument
+            android:name="auth"
+            app:argType="com.learn.navigation.models.Auth" />
+    </fragment>
+</navigation>
